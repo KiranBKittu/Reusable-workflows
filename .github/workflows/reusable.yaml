@@ -10,7 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print environment
-        run: echo "Deploying to ${{ inputs.env}}"
+        run: |
+          echo "Deploying to ${{ inputs.env}}"
+          echo "APP_VERSION: ${{GITHUB_SHA::9}}"
+      - name: print Version
+        run: echo "version: ${{APP_VERSION}}"
 # This is reusable workflow it is a workflow file that is designed to be called by other workflow instead of copying the same CI/CD 
 # we define it once and reuse it anywhere
 
