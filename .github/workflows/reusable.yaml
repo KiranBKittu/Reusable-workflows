@@ -12,8 +12,9 @@ jobs:
       - name: Print environment
         run: |
           echo "Deploying to ${{ inputs.env}}"
-          echo "Commit ID is ${{ github.sha::9 }}"   
-      # - name: print Version
+          #echo "Commit ID is ${{ github.sha }}"  
+          echo " Version is ${GITHUB_SHA::7}" 
+       # - name: print Version
       #   run: echo "version: ${{APP_VERSION}}"
 # This is reusable workflow it is a workflow file that is designed to be called by other workflow instead of copying the same CI/CD 
 # we define it once and reuse it anywhere
