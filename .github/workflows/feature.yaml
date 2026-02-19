@@ -2,7 +2,7 @@ name: Feature Pipeline
 on:
   push:
     branches:
-      - feature
+      - main
 jobs:
   call-resuable:
     uses: ./.github/workflows/reusable.yaml
